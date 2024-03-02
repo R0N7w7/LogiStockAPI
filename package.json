@@ -1,0 +1,15 @@
+{
+  "name": "logicstock",
+  "version": "1.0.0",
+  "description": "An inventory designed to effciently record resources of all kinds within a university, enabling various operations and interactions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "r0n",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "nodemon": "^3.1.0"
+  }
+}
