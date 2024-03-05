@@ -1,12 +1,17 @@
 import express from 'express';
 
+import bodyParser from 'body-parser';
 import 'dotenv/config';
 import { BD } from './config/BD.js';
-import { getInstitutos } from './controllers/instituto.controller.js';
+import appRouter from './routes/index.routes.js';
+
+import  cors  from 'cors';
+
+const { API_PORT } = process.env;
 
 const app = express();
 
-const { API_PORT } = process.env;
+app.use(cors());
 
 try {
     await BD.sync();
@@ -16,8 +21,8 @@ try {
     console.error('Unable to connect to the database:', error);
 }
 
-
-app.get('/', getInstitutos);
+app.use(bodyParser.json());
+app.use('/API', appRouter);
 
 app.listen(API_PORT, () => {
     console.log(`Listen on port ${API_PORT}`);
