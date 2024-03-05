@@ -2,7 +2,7 @@ import express from 'express';
 
 import 'dotenv/config';
 import { BD } from './config/BD.js';
-import { Articulo } from './models/articulo.model.js';
+import { getInstitutos } from './controllers/instituto.controller.js';
 
 const app = express();
 
@@ -17,9 +17,7 @@ try {
 }
 
 
-app.get('/', (req, res) => {
-    res.json({ nombre: 'El Boooooooooooooooooooooooooooooooooob', edad: 20 })
-});
+app.get('/', getInstitutos);
 
 app.listen(API_PORT, () => {
     console.log(`Listen on port ${API_PORT}`);
