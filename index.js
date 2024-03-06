@@ -1,11 +1,16 @@
 import express from 'express';
 
-import bodyParser from 'body-parser';
-import 'dotenv/config';
-import { BD } from './config/BD.js';
-import appRouter from './routes/index.routes.js';
 
-import  cors  from 'cors';
+import bodyParser from 'body-parser';
+
+import 'dotenv/config';
+
+import { BD } from './config/BD.js';
+
+import appRouter from './routes/index.routes.js';
+import { Espacio } from './models/espacio.model.js';
+
+import cors from 'cors';
 
 const { API_PORT } = process.env;
 

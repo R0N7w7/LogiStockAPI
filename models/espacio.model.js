@@ -10,6 +10,10 @@ export const Espacio = BD.define('espacio', {
     primaryKey: true,
     autoIncrement: true,
   },
+  nombre: {
+    type: Sequelize.STRING(255),
+    allowNull: false,
+  },
   tipo: {
     type: Sequelize.STRING(255),
     allowNull: false,
@@ -30,5 +34,6 @@ export const Espacio = BD.define('espacio', {
   },
 });
 
+BD.sync();
 // Relación con "Edificio"
 Espacio.belongsTo(Edificio, { foreignKey: 'edificioId' });
