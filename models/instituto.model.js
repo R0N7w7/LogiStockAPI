@@ -16,5 +16,6 @@ export const Instituto = BD.define('instituto', {
     codigo: {
         type: Sequelize.STRING(10),
         allowNull: false,
+        unique: true,
     },
 });

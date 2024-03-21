@@ -19,6 +19,7 @@ export const Articulo = BD.define('Articulo', {
     codigo: {
         type: STRING(10),
         allowNull: false,
+        unique: true
     },
     cantidad: {
         type: INTEGER,
@@ -37,7 +38,8 @@ export const Articulo = BD.define('Articulo', {
         references: {
             key: 'id',
             model: 'categorias'
-        }
+        },
+        unique: true
     },
     espacio_id: {
         type: INTEGER,
