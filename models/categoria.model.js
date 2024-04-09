@@ -1,6 +1,6 @@
 import { INTEGER, STRING, TEXT } from "sequelize";
 
-import { BD } from "../config/BD.js";
+import { BD } from "../stores/BD.js";
 
 export const Categoria = BD.define('categorias', {
     id: {

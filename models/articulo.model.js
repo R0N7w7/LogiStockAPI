@@ -1,5 +1,5 @@
-import { DECIMAL, INTEGER, JSON, STRING, DATE } from "sequelize";
-import { BD } from "../config/BD.js";
+import { DATE, DECIMAL, INTEGER, JSON, STRING } from "sequelize";
+import { BD } from "../stores/BD.js";
 import { Categoria } from "./categoria.model.js";
 import { Espacio } from "./espacio.model.js";
 
@@ -35,14 +35,15 @@ export const Articulo = BD.define('Articulo', {
     },
     categoria_id: {
         type: INTEGER,
+        allowNull: false,
         references: {
             key: 'id',
             model: 'categorias'
-        },
-        unique: true
+        }
     },
     espacio_id: {
         type: INTEGER,
+        allowNull: false,
         references: {
             key: 'id',
             model: 'espacios',

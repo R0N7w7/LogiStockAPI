@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import { INTEGER, STRING } from "sequelize";
-import { BD } from "../config/BD.js";
+import { BD_user as BD } from "../stores/USERDB.js";
 
 export const Usuario = BD.define('usuario', {
     id: {

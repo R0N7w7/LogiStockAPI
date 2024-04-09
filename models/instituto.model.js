@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize';
 
-import { BD } from '../config/BD.js'; // Define la conexión a la base de datos
+import { BD } from '../stores/BD.js'; // Define la conexión a la base de datos
 
 // Modelo "Instituto"
 export const Instituto = BD.define('instituto', {

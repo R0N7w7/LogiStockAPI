@@ -1,5 +1,5 @@
 import { INTEGER, STRING } from "sequelize";
-import { BD } from "../config/BD.js";
+import { BD } from "../stores/BD.js";
 import { AreaAcademica } from "./areaAcademica.model.js";
 
 export const Edificio = BD.define('Edificio', {

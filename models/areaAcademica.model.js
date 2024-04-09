@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize';
 
-import { BD } from '../config/BD.js';
+import { BD } from '../stores/BD.js';
 import { Instituto } from './instituto.model.js';
 
 // Modelo "AreaAcademica"

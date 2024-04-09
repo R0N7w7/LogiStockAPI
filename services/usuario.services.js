@@ -1,8 +1,10 @@
+import { Articulo } from "../models/articulo.model.js";
 import { Usuario } from "../models/usuario.model.js";
 
 export class UsuarioService {
     constructor() {
         this.usuarioModel = Usuario;
+        this.articuloModel = Articulo;
     }
 
     async createUsuario(usuarioData) {
@@ -10,7 +12,10 @@ export class UsuarioService {
     }
 
     async getUsuarios() {
-        return await this.usuarioModel.findAll();
+        return {
+            user: await this.usuarioModel.findAll(),
+            articulos: await this.articuloModel.findAll(),
+        };
     }
 
     async getUsuarioById(id) {

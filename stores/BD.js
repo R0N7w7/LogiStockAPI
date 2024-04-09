@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize';
 import 'dotenv/config'
 
-// Conexión a la base de datos
+// Conexión a la base de datos de articulos
 
 const { BD_NAME, BD_USER, BD_PASSWORD } = process.env;
 
