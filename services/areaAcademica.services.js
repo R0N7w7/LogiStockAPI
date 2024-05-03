@@ -29,6 +29,17 @@ export class AreaAcademicaService {
     });
   }
 
+  async getAreaAcademicaByInstituto(institutoId) {
+    return await this.areaAcademicaModel.findAll({
+      where: {
+        institutoId
+      },
+      include: {
+        model: Instituto
+      }
+    })
+  }
+
   async updateAreaAcademica(id, areaAcademica) {
     return await this.areaAcademicaModel.update(areaAcademica, {
       where: {

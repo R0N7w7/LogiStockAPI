@@ -17,7 +17,7 @@ export const Articulo = BD.define('Articulo', {
         type: STRING(255),
     },
     codigo: {
-        type: STRING(10),
+        type: STRING(255),
         allowNull: false,
         unique: true
     },

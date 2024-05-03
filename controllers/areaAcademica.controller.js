@@ -37,6 +37,20 @@ export const getAreaAcademicaById = async (req, res, next) => {
     }
 };
 
+export const getAreaAcademicaByInstituto = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const areaAcademica = await areaAcademicaService.getAreaAcademicaByInstituto(id);
+        if (!areaAcademica) {
+            return res.status(404).json({ error: 'Área académica no encontrada' });
+        }
+        res.json(areaAcademica);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error al obtener área académica' });
+    }
+};
+
 export const updateAreaAcademica = async (req, res, next) => {
     try {
         const { id } = req.params;
