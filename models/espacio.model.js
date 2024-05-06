@@ -36,3 +36,4 @@ export const Espacio = BD.define('espacio', {
 
 // Relación con "Edificio"
 Espacio.belongsTo(Edificio, { foreignKey: 'edificioId' });
+Edificio.hasMany(Espacio, { foreignKey: 'edificioId' });

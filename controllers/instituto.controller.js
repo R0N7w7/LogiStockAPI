@@ -55,3 +55,13 @@ export const deleteInstituto = async (req, res, next) => {
         res.status(404).json({ error: "Instituto no encontrado" });
     }
 };
+
+export const getInstitutoFullDetail = async (req, res, next) => {
+    try {
+        const details = await institutoService.getInstitutoFullDetail();
+        console.log(details);
+        res.json(details);
+    } catch (error) {
+        res.status(404).json({ error: "Instituto no encontrado" });
+    }
+}

@@ -70,6 +70,9 @@ export const Articulo = BD.define('Articulo', {
 Articulo.belongsTo(Categoria, {
     foreignKey: 'categoria_id',
 });
+Categoria.hasMany(Articulo, { foreignKey: 'categoria_id' });
+
 Articulo.belongsTo(Espacio, {
     foreignKey: 'espacio_id',
 });
+Espacio.hasMany(Articulo, { foreignKey: 'espacio_id' })

@@ -3,6 +3,7 @@ import {
     createInstituto,
     deleteInstituto,
     getInstitutoById,
+    getInstitutoFullDetail,
     getInstitutos,
     updateInstituto
 } from "../controllers/instituto.controller.js";
@@ -11,9 +12,11 @@ const router = Router();
 
 router.post('/', createInstituto);
 
-router.get('/', getInstitutos);
+router.get('/detail/', getInstitutoFullDetail);
 
 router.get('/:id', getInstitutoById);
+
+router.get('/', getInstitutos);
 
 router.put('/:id', updateInstituto);
 

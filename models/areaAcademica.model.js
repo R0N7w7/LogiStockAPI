@@ -29,3 +29,4 @@ export const AreaAcademica = BD.define('area_academica', {
 
 // Relación con "Instituto"
 AreaAcademica.belongsTo(Instituto, { foreignKey: 'institutoId' });
+Instituto.hasMany(AreaAcademica, { foreignKey: 'institutoId' });
