@@ -37,6 +37,20 @@ export const getEspacioById = async (req, res, next) => {
     }
 };
 
+export const getEspaciosByEdificioId = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const espacios = await espacioService.getEspaciosByEdificioId(id);
+        if (!espacios) {
+            return res.status(404).json({ error: 'Espacio no encontrado' });
+        }
+        res.json(espacios);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error al obtener espacios' });
+    }
+};
+
 export const updateEspacio = async (req, res, next) => {
     try {
         const { id } = req.params;

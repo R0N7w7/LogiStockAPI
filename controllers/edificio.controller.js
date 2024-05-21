@@ -37,6 +37,20 @@ export const getEdificioById = async (req, res, next) => {
     }
 };
 
+export const getEdificiosByAreaId = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const edificios = await edificioService.getEdificiosByAreaId(id);
+        if (!edificios) {
+            return res.status(404).json({ error: 'No hay edificios' });
+        }
+        res.json(edificios);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error al obtener edificio' });
+    }
+};
+
 export const updateEdificio = async (req, res, next) => {
     try {
         const { id } = req.params;

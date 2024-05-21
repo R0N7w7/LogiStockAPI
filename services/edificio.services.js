@@ -1,5 +1,5 @@
-import { Edificio } from "../models/edificio.model.js";
 import { AreaAcademica } from "../models/areaAcademica.model.js";
+import { Edificio } from "../models/edificio.model.js";
 
 
 export class EdificioService {
@@ -28,6 +28,14 @@ export class EdificioService {
         attributes: ['nombre'], // Solo obtiene el nombre del area academica
       },
     });
+  }
+
+  async getEdificiosByAreaId(area_academica_id) {
+    return await this.edificioModel.findAll({
+      where: {
+        area_academica_id
+      }
+    })
   }
 
   async updateEdificio(id, edificio) {

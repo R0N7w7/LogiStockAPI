@@ -50,7 +50,7 @@ export const deleteInstituto = async (req, res, next) => {
     try {
         const { id } = req.params;
         await institutoService.deleteInstituto(id);
-        res.status(204).json({ message: "Instituto eliminado" });
+        res.status(200).json({ message: "Instituto eliminado" });
     } catch (error) {
         res.status(404).json({ error: "Instituto no encontrado" });
     }
@@ -59,7 +59,6 @@ export const deleteInstituto = async (req, res, next) => {
 export const getInstitutoFullDetail = async (req, res, next) => {
     try {
         const details = await institutoService.getInstitutoFullDetail();
-        console.log(details);
         res.json(details);
     } catch (error) {
         res.status(404).json({ error: "Instituto no encontrado" });

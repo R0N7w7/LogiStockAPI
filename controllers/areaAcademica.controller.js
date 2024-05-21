@@ -67,7 +67,7 @@ export const deleteAreaAcademica = async (req, res, next) => {
     try {
         const { id } = req.params;
         await areaAcademicaService.deleteAreaAcademica(id);
-        res.status(204).json({ message: 'Área académica eliminada' });
+        res.status(200).json({ message: 'Área académica eliminada' });
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Error al eliminar área académica' });

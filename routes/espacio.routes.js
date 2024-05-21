@@ -6,6 +6,7 @@ import {
   getEspacios,
   createEspacio,
   getEspacioById,
+  getEspaciosByEdificioId,
   updateEspacio,
   deleteEspacio,
 } from '../controllers/espacio.controller.js';
@@ -18,6 +19,8 @@ router.post('/', createEspacio);
 
 // Ruta para obtener un espacio por su ID
 router.get('/:id', getEspacioById);
+
+router.get('/edificio/:id', getEspaciosByEdificioId);
 
 // Ruta para actualizar un espacio
 router.put('/:id', updateEspacio);

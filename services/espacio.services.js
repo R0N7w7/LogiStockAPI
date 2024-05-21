@@ -29,6 +29,14 @@ export class EspacioService {
     });
   }
 
+  async getEspaciosByEdificioId(edificioId) {
+    return await this.espacioModel.findAll({
+      where: {
+        edificioId
+      }
+    })
+  }
+
   async updateEspacio(id, espacio) {
     return await this.espacioModel.update(espacio, {
       where: {

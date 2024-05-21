@@ -6,6 +6,7 @@ import {
   getEdificios,
   createEdificio,
   getEdificioById,
+  getEdificiosByAreaId,
   updateEdificio,
   deleteEdificio,
 } from '../controllers/edificio.controller.js';
@@ -24,5 +25,7 @@ router.put('/:id', updateEdificio);
 
 // Ruta para eliminar un edificio
 router.delete('/:id', deleteEdificio);
+
+router.get('/area_academica/:id', getEdificiosByAreaId);
 
 export default router;

@@ -16,6 +16,10 @@ export const Edificio = BD.define('Edificio', {
         type: INTEGER,
         allowNull: false,
     },
+    codigo: {
+        type: String(255),
+        allowNull: false
+    },
     area_academica_id: {
         type: INTEGER,
         references: {
