@@ -30,10 +30,14 @@ export class UsuarioService {
         })
     }
 
-    async updateUsuario(usuarioData) {
-        return await this.usuarioModel.update(usuarioData);
+    async updateUsuario(id, usuario) {
+        return await this.usuarioModel.update(usuario, {
+            where: {
+                id,
+            },
+        });
     }
-
+    
     async deleteUsuario(id) {
         return await this.usuarioModel.destroy({
             where: {

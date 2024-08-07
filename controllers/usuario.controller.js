@@ -41,7 +41,7 @@ export const updateUsuario = async (req, res) => {
     try {
         const id = req.params.id;
         const usuarioData = req.body;
-        const usuario = await usuarioService.updateUsuario({ ...usuarioData, id });
+        const usuario = await usuarioService.updateUsuario(id, usuarioData);
         if (!usuario) {
             return res.status(404).json({ message: 'Usuario not found' });
         }
